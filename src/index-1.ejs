@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Ishita Bhuva</title>
+
+    <% include /src/include/styles.ejs %>
+
+</head>
+
+<body>
+
+    <% include /src/include/header.ejs %>
+
+        <main class="ib-coming-soon">
+            <div class="ib-bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="ib-coming-text">Coming Soon</h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <% include /src/include/footer.ejs %>
+
+            <% include /src/include/scripts.ejs %>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                <script>
+                    var textWrapper = document.querySelector('.ib-coming-text');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({
+                            loop: false
+                        })
+                        .add({
+                            targets: '.ib-coming-text .letter',
+                            opacity: [0, 1],
+                            easing: "easeInOutQuad",
+                            duration: 2250,
+                            delay: (el, i) => 150 * (i + 1)
+                        }).add({
+                            targets: '.ib-coming-text',
+                            opacity: 1,
+                            duration: 1000,
+                            easing: "easeOutExpo",
+                            delay: 1000
+                        });
+                </script>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                <script src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('.ib-bg').ripples('show');
+                    });
+                </script>
+
+</body>
+
+</html>

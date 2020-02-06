@@ -1,9 +1,43 @@
-
 // Body
 $enable-rounded: false;
 // $info:red;
 // $blue: #dc2d1a;
-
 // $input-focus-bg: #dcad1a;
-
 // $input-transition: border-color ease-in-out 1s, box-shadow ease-in-out 1s;
+$black:#000;
+$white:#fff;
+$f-prompt:'Prompt';
+$primary-color:#EF5350;
+@mixin ib-transition {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+@mixin ib-before-after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+@mixin media-breakpoint-down-xxxl {
+    @media screen and (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down-xxl {
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down-xl {
+    @media screen and (max-width: 1400px) {
+        @content;
+    }
+}

@@ -1,5 +1,91 @@
-header {
-    .lms-header-logo {
-        margin-right: auto;
+.ib-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    right: 0;
+    padding: 50px;
+    @include media-breakpoint-down-xl {
+        padding: 25px;
+    }
+    .navbar {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        animation: ib-logo 2s linear infinite;
+        -webkit-animation: ib-logo 2s linear infinite;
+        @keyframes ib-logo {
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+        @-webkit-keyframes ib-logo {
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+        img {
+            height: 40px;
+            @include media-breakpoint-down(md) {
+                height: 30px;
+            }
+        }
+    }
+    .ib-contact-link {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: auto;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        @include media-breakpoint-down(sm) {
+            width: auto;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                margin-left: 20px;
+                @include media-breakpoint-down(sm) {
+                    margin-left: 15px;
+                }
+                a {
+                    i {
+                        width: 25px;
+                        height: 25px;
+                        @include media-breakpoint-down(sm) {
+                            width: 20px;
+                            height: 20px;
+                        }
+                        svg {
+                            width: 25px;
+                            height: 25px;
+                            @include media-breakpoint-down(sm) {
+                                width: 20px;
+                                height: 20px;
+                            }
+                            g {
+                                fill: $white;
+                                @include ib-transition;
+                            }
+                        }
+                    }
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        i {
+                            svg {
+                                g {
+                                    fill: $primary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

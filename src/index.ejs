@@ -8,149 +8,102 @@
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
 
-    <title>Nirav 9</title>
+    <title>Ishita Bhuva</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157715503-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-157715503-1');
+    </script>
 
     <% include /src/include/styles.ejs %>
 
 </head>
 
 <body>
-
     <% include /src/include/header.ejs %>
 
-        <main id="lms-page-index">
+        <main class="ib-coming-soon">
             <div class="container">
-                <div class="row animated fadeInRight">
-                    <div class="col-md-12">
-                        <div class="hd-title">
-                            <h3> Animated Css Exmaple</h3>
-                        </div>
-
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="animated-box animated bounce">
-                            <h4>bounce</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="animated-box animated bounceInLeft">
-                            <h4>animated bounceInLeft</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="animated-box animated flash">
-                            <h4>flash</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="animated-box animated rubberBand">
-                            <h4>flash</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="animated-box animated swing">
-                            <h4>swing</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="animated-box animated tada">
-                            <h4>tada</h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales sem diam, id consequat
-                                lectus eleifend quis. Etiam in risus efficitur, vestibulum velit sit amet, finibus augue.
-                                Donec non vulputate elit. Nulla ac pretium neque.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row animated fadeInRight">
                     <div class="col-md-12">
-                        <div class="hd-title">
-                            <h3>Sweet Alert Exmaple</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="sweetalert">
-                            <button class="btn btn-info hello">Click here </button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sweetalert">
-                            <button class="btn btn-info promises">Promises </button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sweetalert">
-                            <button class="btn btn-info sure">Are  you sure </button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sweetalert">
-                            <button class="btn btn-info delete-account">Good job </button>
-                        </div>
+                        <h1 class="ib-coming-text">Ish!ta Bhuva</h1>
+                        <p>Designing is a way of the new creativity</p>
                     </div>
                 </div>
             </div>
+            <div class="ib-dot-shape"></div>
+            <div class="ib-ring-shape">
+                <i class="ib-ring-left"></i>
+                <i class="ib-ring-right"></i>
+            </div>
+            <div class="ib-line-shape">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h2>DESI<br>GNER</h2>
+            <h3>Ish!ta Bhuva</h3>
+            <div class='cursor' id="cursor"></div>
+            <div class='cursor2' id="cursor2"></div>
+            <div class='cursor3' id="cursor3"></div>
         </main>
+
 
         <% include /src/include/footer.ejs %>
 
             <% include /src/include/scripts.ejs %>
                 <script>
+                    var textWrapper = document.querySelector('.ib-coming-text');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-                    $('button.hello').click(function (e) {
-                        swal("Hello world!");
-                    });
-
-                    $('button.delete-account').click(function (e) {
-                        swal("Good job!", "You clicked the button!", "success");
-                    });
-
-                    $('button.promises').click(function (e) {
-                        swal("Click on either the button or outside the modal.")
-                            .then((value) => {
-                                swal(`The returned value is: ${value}`);
-                            });
-                    });
-
-                    $('button.sure').click(function (e) {
-                        swal({
-                            title: "Are you sure?",
-                            text: "Once deleted, you will not be able to recover this imaginary file!",
-                            icon: "warning",
-                            buttons: true,
-                            dangerMode: true,
+                    anime.timeline({
+                            loop: false
                         })
-                            .then((willDelete) => {
-                                if (willDelete) {
-                                    swal("Poof! Your imaginary file has been deleted!", {
-                                        icon: "success",
-                                    });
-                                } else {
-                                    swal("Your imaginary file is safe!");
-                                }
-                            });
-                    });
-
-
+                        .add({
+                            targets: '.ib-coming-text .letter',
+                            opacity: [0, 1],
+                            easing: "easeInOutQuad",
+                            duration: 2250,
+                            delay: (el, i) => 150 * (i + 1)
+                        }).add({
+                            targets: '.ib-coming-text',
+                            opacity: 1,
+                            duration: 1000,
+                            easing: "easeOutExpo",
+                            delay: 1000
+                        });
                 </script>
+                <script>
+                    var textWrapper = document.querySelector('.ib-me-text');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({
+                            loop: false
+                        })
+                        .add({
+                            targets: '.ib-me-text .letter',
+                            opacity: [0, 1],
+                            easing: "easeInOutQuad",
+                            duration: 2250,
+                            delay: (el, i) => 150 * (i + 1)
+                        }).add({
+                            targets: '.ib-me-text',
+                            opacity: 1,
+                            duration: 1000,
+                            easing: "easeOutExpo",
+                            delay: 1000
+                        });
+                </script>
+
 </body>
 
 </html>

@@ -17,33 +17,491 @@
         @include media-breakpoint-up(xl) {
             font-size: 18px;
         }
-
-        // span {
-        //     background-color: $primary;
-        // }
     }
 }
 
+.ib-coming-soon {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &:before {
+        @include ib-before-after;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 590px;
+        opacity: 0.19;
+        left: auto;
+        height: 100%;
+        z-index: 0;
+        transform: skew(-22deg, 0deg);
+        right: 300px;
+        @include media-breakpoint-down-xxxl {
+            width: 400px;
+        }
+        @include media-breakpoint-down-xl {
+            width: 300px;
+            right: 200px;
+        }
+        @include media-breakpoint-down(md) {
+            width: 190px;
+            right: 150px;
+        }
+    }
+    .ib-ring-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        .ib-ring-left {
+            position: absolute;
+            left: 30px;
+            top: 250px;
+            @include media-breakpoint-down(sm) {
+                left: 20px;
+                top: 110px;
+            }
+            &:before,
+            &:after {
+                @include ib-before-after;
+                border: 5px solid $primary-color;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                -webkit-animation: circle-left 10s infinite linear;
+                animation: circle-left 10s infinite linear;
+                @include media-breakpoint-down-xl {
+                    width: 40px;
+                    height: 40px;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 30px;
+                    height: 30px;
+                    border-width: 2px;
+                }
+                @keyframes circle-left {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(360deg)
+                    }
+                }
+                @-webkit-keyframes circle-left {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(360deg)
+                    }
+                }
+            }
+            &:before {
+                left: 20px;
+                top: -20px;
+                @include media-breakpoint-down-xl {
+                    left: 15px;
+                    top: -15px;
+                }
+                -webkit-animation: circle-right 10s infinite linear;
+                animation: circle-right 10s infinite linear;
+                @keyframes circle-right {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(-360deg)
+                    }
+                }
+                @-webkit-keyframes circle-right {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(-360deg)
+                    }
+                }
+            }
+        }
+        .ib-ring-right {
+            position: absolute;
+            right: 100px;
+            bottom: 300px;
+            @include media-breakpoint-down(md) {
+                right: 80px;
+                bottom: 210px;
+            }
+            @include media-breakpoint-down(sm) {
+                right: 60px;
+                bottom: 110px;
+            }
+            &:before,
+            &:after {
+                @include ib-before-after;
+                border: 5px solid $primary-color;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                -webkit-animation: circle-left 10s infinite linear;
+                animation: circle-left 10s infinite linear;
+                @include media-breakpoint-down-xl {
+                    width: 40px;
+                    height: 40px;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 30px;
+                    height: 30px;
+                    border-width: 2px;
+                }
+                @keyframes circle-left {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(360deg)
+                    }
+                }
+                @-webkit-keyframes circle-left {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(360deg)
+                    }
+                }
+            }
+            &:before {
+                left: 20px;
+                top: -16px;
+                width: 40px;
+                height: 40px;
+                -webkit-animation: circle-right 10s infinite linear;
+                animation: circle-right 10s infinite linear;
+                @include media-breakpoint-down-xl {
+                    left: 15px;
+                    top: -15px;
+                    width: 30px;
+                    height: 30px;
+                }
+                @keyframes circle-right {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(-360deg)
+                    }
+                }
+                @-webkit-keyframes circle-right {
+                    from {
+                        -webkit-transform: rotateZ(0deg)
+                    }
+                    to {
+                        -webkit-transform: rotateZ(-360deg)
+                    }
+                }
+            }
+        }
+    }
+    .ib-dot-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        &:before,
+        &:after {
+            @include ib-before-after;
+            background: url(../images/dot-shape.svg) no-repeat;
+            background-size: contain;
+            background-position: center center;
+            opacity: 0.19;
+        }
+        &:before {
+            top: auto;
+            right: auto;
+            width: 95px;
+            height: 160px;
+            left: 35px;
+            bottom: 200px;
+            @include media-breakpoint-down-xxxl {
+                width: 75px;
+            }
+            @include media-breakpoint-down(lg) {
+                bottom: 150px;
+            }
+            @include media-breakpoint-down(md) {
+                bottom: 120px;
+                width: 60px;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 120px;
+                left: 25px;
+                bottom: 40px;
+                width: 50px;
+            }
+        }
+        &:after {
+            bottom: auto;
+            left: auto;
+            width: 145px;
+            height: 195px;
+            top: 20px;
+            right: 80px;
+            transform: rotate(90deg);
+            @include media-breakpoint-down-xxxl {
+                width: 85px;
+                top: 0;
+            }
+            @include media-breakpoint-down(lg) {
+                height: 145px;
+                width: 75px;
+            }
+            @include media-breakpoint-down(md) {
+                height: 105px;
+                width: 90px;
+                right: 40px;
+                top: 20px;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 85px;
+                width: 70px;
+                right: 30px;
+                top: 10px;
+            }
+        }
+    }
+    .ib-line-shape {
+        position: absolute;
+        top: 0;
+        left: 140px;
+        bottom: 0;
+        right: 140px;
+        opacity: 0.05;
+        display: flex;
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            left: 70px;
+            right: 70px;
+        }
+        @include media-breakpoint-down(sm) {
+            left: 40px;
+            right: 40px;
+        }
+        span {
+            width: 2px;
+            display: block;
+            background-color: $white;
+            // -webkit-animation: dash 5s ease-in-out forwards;
+            // animation: dash 5s ease-in-out forwards;
+            // animation-delay: 2s;
+            height: 100%;
+            // @-webkit-keyframes dash {
+            //     0% {
+            //         height: 0;
+            //     }
+            //     100% {
+            //         height: 100%;
+            //     }
+            // }
+            // @keyframes dash {
+            //     0% {
+            //         height: 0;
+            //     }
+            //     100% {
+            //         height: 100%;
+            //     }
+            // }
+            // &:nth-child(2n) {
+            //     animation-delay: 5s;
+            // }
+            &:last-child() {
+                @include media-breakpoint-down-xxl {
+                    display: none;
+                }
+            }
+            &:nth-last-child(2) {
+                @include media-breakpoint-down-xl {
+                    display: none;
+                }
+            }
+            &:nth-last-child(3) {
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
+            }
+            &:nth-last-child(4) {
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+            &:nth-last-child(5) {
+                @include media-breakpoint-down(xs) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index:1;
+    }
+    h1 {
+        font-size: 80px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 85px;
+        @include media-breakpoint-down-xxxl {
+            font-size: 70px;
+            line-height: 75px;
+        }
+        @include media-breakpoint-down-xl {
+            font-size: 60px;
+            line-height: 65px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 50px;
+            line-height: 55px;
+            letter-spacing: 0px;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 40px;
+            line-height: 45px;
+        }
+        .letter {
+            transition: transform 0.3s ease-in-out;
+            -webkit-transition: transform 0.3s ease-in-out;
+            -moz-transition: transform 0.3s ease-in-out;
+            -o-transition: transform 0.3s ease-in-out;
+            transform-origin: 50% 70%;
+            will-change: transform;
+            transform: matrix(1, 0, 0, 1, 0, 0);
+            cursor: pointer;
+            &:hover {
+                transform: matrix(1.222, 0, 0, 1.222, 0, 0);
+            }
+        }
+    }
+    p {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: right;
+        animation: ib-text 6s ease-in-out forwards;
+        -webkit-animation: ib-text 6s ease-in-out forwards;
+        animation-delay: 2s;
+        opacity: 0;
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+            font-size: 13px;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 12px;
+        }
+        @keyframes ib-text {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @-webkit-keyframes ib-text {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+    h2 {
+        font-size: 280px;
+        font-weight: 700;
+        position: absolute;
+        left: 130px;
+        top: 80px;
+        word-break: break-word;
+        line-height: 250px;
+        opacity: 0.05;
+        @include media-breakpoint-down-xxxl {
+            font-size: 220px;
+            line-height: 200px;
+        }
+        @include media-breakpoint-down-xl {
+            font-size: 190px;
+            line-height: 170px;
+            top: 70px;
+        }
+        @include media-breakpoint-down(lg) {
+            font-size: 170px;
+            line-height: 140px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 140px;
+            line-height: 130px;
+            top: 150px;
+            left: 80px;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 100px;
+            line-height: 90px;
+            top: 100px;
+            left: 20px;
+        }
+    }
+    h3 {
+        font-weight: 200;
+        font-size: 340px;
+        position: absolute;
+        bottom: -110px;
+        left: 0;
+        right: 0;
+        opacity: 0.03;
+        line-height: 340px;
+        white-space: nowrap;
+        text-align: center;
+        @include media-breakpoint-down-xxxl {
+            font-size: 290px;
+            line-height: 290px;
+        }
+        @include media-breakpoint-down-xxl {
+            font-size: 250px;
+            line-height: 320px;
+        }
+        @include media-breakpoint-down-xl {
+            font-size: 220px;
+        }
+        @include media-breakpoint-down(lg) {
+            font-size: 180px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 140px;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 105px;
+            line-height: 280px;
+        }
+        @include media-breakpoint-down(xs) {
+            font-size: 53px;
+            line-height: 260px;
+            font-weight: 700;
+        }
+    }
+}
 
-.hd-title{
+.ib-bg {
     width: 100%;
-    h3{
+    height: 100%;
+    background-image: url(../images/bg.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    canvas {
         width: 100%;
-        font-size: 35px;
-        padding: 25px 0px;
+        height: 100%;
     }
-}
-
-.animated-box{
-    width: 100%;
-    padding: 50px  30px;
-    margin: 0px 0px 40px 0px;
-    -moz-box-shadow:    3px 3px 5px 6px #ccc;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-    box-shadow:         3px 3px 5px 6px #ccc;
-}
-
-.sweetalert{
-    width: 100%;
-    text-align: center;
 }
