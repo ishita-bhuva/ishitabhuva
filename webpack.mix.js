@@ -19,7 +19,7 @@ mix.combine(
         // "src/vendor/jqueryui/jquery-ui.min.js",
         // "src/vendor/sweetalert/sweetalert.min.js",
         // "src/vendor/validate/jquery.validate.min.js"
-        // "src/js/site-analytics.js.js",
+        "src/js/site-analytics.js.js",
         "src/js/script.js",
         "src/js/anime.min.js",       
         "src/js/jquery.min.js",       
