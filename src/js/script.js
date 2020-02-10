@@ -1,10 +1,10 @@
 
 // google analytics code
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
+//  window.dataLayer = window.dataLayer || [];
+//  function gtag(){dataLayer.push(arguments);}
+//  gtag('js', new Date());
 
- gtag('config', 'UA-157715503-1');
+//  gtag('config', 'UA-157715503-1');
 
 
 /* Please ❤ this if you like it! */
