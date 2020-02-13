@@ -484,3 +484,76 @@
         height: 100%;
     }
 }
+
+
+.jh-loader {
+    position: relative;
+    &:before {
+        background-color: $black;
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+    }
+    &:after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../images/logo.svg) no-repeat;
+        background-position: center center;
+        background-size: 150px;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        animation: ib-logo 5s linear infinite;
+        -webkit-animation: ib-logo 5s linear infinite;
+        @keyframes ib-logo {
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+        @-webkit-keyframes ib-logo {
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+    }
+    span{
+        background: url(../images/logo.svg) no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 700px;
+        height: 100vh;
+        position: absolute;
+        right: 10%;
+        top: -100px;
+        display: block;
+        z-index: 11;
+        opacity: 0.05;
+        margin: 0 auto;
+        @include media-breakpoint-down(lg){
+            width: 540px;
+        }
+        @include media-breakpoint-down(sm){
+            width: 500px;
+            top: -10px;
+            height: 500px;
+        }
+        @include media-breakpoint-down(sm){
+            width: 500px;
+            top: -10px;
+            height: 500px;
+        }
+        @include media-breakpoint-down(xs){
+            width: 310px;
+            top: 0px;
+            height: 310px;
+        }
+    }
+}
