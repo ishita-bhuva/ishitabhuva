@@ -486,8 +486,9 @@
 }
 
 
-.jh-loader {
+.ib-loader {
     position: relative;
+    background-color: $black;
     &:before {
         background-color: $black;
         content: "";
