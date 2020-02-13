@@ -16,6 +16,8 @@ body {
     background-color: $black;
     font-size: 14px;
     color: $white;
+    cursor: none;
+    overflow: hidden;
 }
 
 h1,
@@ -54,7 +56,12 @@ button {
         box-shadow: none;
     }
 }
-
+* {
+	cursor: none;
+}
+.ib-main-section{
+    overflow: hidden;
+}
 .cursor,
 .cursor2,
 .cursor3 {
@@ -77,6 +84,7 @@ button {
     height: 0;
     width: 0;
     z-index: 99999;
+    opacity: 0;
 }
 
 .cursor2,
@@ -85,7 +93,8 @@ button {
     width: 36px;
     z-index: 99998;
     -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out
+    transition: all 0.3s ease-out;
+    opacity: 0;
 }
 
 .cursor2.hover,
@@ -103,4 +112,20 @@ button {
 .cursor2.hover {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+
+figure#mouse-pointer {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+    display: block;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:rgba(239,83,80,0.7);
+    border-radius: 50px;
+    @include media-breakpoint-down(md) {
+        display: none;
+      }
 }

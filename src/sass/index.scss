@@ -357,7 +357,7 @@
             transform-origin: 50% 70%;
             will-change: transform;
             transform: matrix(1, 0, 0, 1, 0, 0);
-            cursor: pointer;
+            cursor: none;
             &:hover {
                 transform: matrix(1.222, 0, 0, 1.222, 0, 0);
             }

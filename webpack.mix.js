@@ -22,7 +22,7 @@ mix.combine(
         // "src/js/site-analytics.js.js",
         "src/js/script.js",
         "src/js/anime.min.js",       
-        "src/js/jquery.min.js",       
+        "src/js/jquery.min.js",   
     ],
     "dist/js/vendor.js"
 );
