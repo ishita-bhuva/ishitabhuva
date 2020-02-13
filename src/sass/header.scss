@@ -2,7 +2,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     right: 0;
     padding: 50px;
     @include media-breakpoint-down-xl {
@@ -57,15 +57,15 @@
                         width: 25px;
                         height: 25px;
                         @include media-breakpoint-down(sm) {
-                            width: 20px;
-                            height: 20px;
+                            width: 23px;
+                            height: 23px;
                         }
                         svg {
                             width: 25px;
                             height: 25px;
                             @include media-breakpoint-down(sm) {
-                                width: 20px;
-                                height: 20px;
+                                width: 23px;
+                                height: 23px;
                             }
                             g {
                                 fill: $white;
