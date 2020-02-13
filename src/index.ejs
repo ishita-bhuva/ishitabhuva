@@ -29,8 +29,7 @@
             <span></span>
         </div>
         <figure id="mouse-pointer"></figure>
-        <% include /src/include/header.ejs %>
-    
+        <% include /src/include/header.ejs %>    
             <main class="ib-coming-soon">
                 <div class="container">
                     <div class="row">
@@ -56,56 +55,54 @@
                     <span></span>
                 </div>
                 <h2>DESI<br>GN<span>-</span>ER</h2>
-                <h3>Ish!ta Bhuva</h3>                
-            </main>
-    
-    
-            <% include /src/include/footer.ejs %>
+                <h3>Ish!ta Bhuva</h3>
+            </main>   
+        <% include /src/include/footer.ejs %>
     </div>
 
-            <% include /src/include/scripts.ejs %>
-                <script>
-                    var textWrapper = document.querySelector('.ib-coming-text');
-                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        <% include /src/include/scripts.ejs %>
+        <script>
+            var textWrapper = document.querySelector('.ib-coming-text');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-                    anime.timeline({
-                            loop: false
-                        })
-                        .add({
-                            targets: '.ib-coming-text .letter',
-                            opacity: [0, 1],
-                            easing: "easeInOutQuad",
-                            duration: 2250,
-                            delay: (el, i) => 150 * (i + 1)
-                        }).add({
-                            targets: '.ib-coming-text',
-                            opacity: 1,
-                            duration: 1000,
-                            easing: "easeOutExpo",
-                            delay: 1000
-                        });
-                </script>
-                <script>
-                    var textWrapper = document.querySelector('.ib-me-text');
-                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            anime.timeline({
+                    loop: false
+                })
+                .add({
+                    targets: '.ib-coming-text .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 2250,
+                    delay: (el, i) => 150 * (i + 1)
+                }).add({
+                    targets: '.ib-coming-text',
+                    opacity: 1,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
+        <script>
+            var textWrapper = document.querySelector('.ib-me-text');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-                    anime.timeline({
-                            loop: false
-                        })
-                        .add({
-                            targets: '.ib-me-text .letter',
-                            opacity: [0, 1],
-                            easing: "easeInOutQuad",
-                            duration: 2250,
-                            delay: (el, i) => 150 * (i + 1)
-                        }).add({
-                            targets: '.ib-me-text',
-                            opacity: 1,
-                            duration: 1000,
-                            easing: "easeOutExpo",
-                            delay: 1000
-                        });
-                </script>
+            anime.timeline({
+                    loop: false
+                })
+                .add({
+                    targets: '.ib-me-text .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 2250,
+                    delay: (el, i) => 150 * (i + 1)
+                }).add({
+                    targets: '.ib-me-text',
+                    opacity: 1,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
 
 </body>
 
