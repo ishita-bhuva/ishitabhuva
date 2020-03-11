@@ -22,7 +22,14 @@ mix.combine(
         // "src/js/site-analytics.js.js",
         "src/js/script.js",
         "src/js/anime.min.js",       
-        "src/js/jquery.min.js",   
+        "src/js/jquery.min.js",  
+        "src/vendor/swiper/swiper.js",   
+        "src/vendor/masonry/modernizr.custom.js",
+        "src/vendor/masonry/masonry.pkgd.min.js",
+        "src/vendor/masonry/imagesloaded.js",
+        "src/vendor/masonry/classie.js",
+        "src/vendor/masonry/AnimOnScroll.js",
+        "src/vendor/jquery-smooth-scroll.js",
     ],
     "dist/js/vendor.js"
 );
@@ -32,6 +39,9 @@ mix.combine(
         "src/vendor/animate/animate.css",
         // "src/vendor/dataTables/datatables.min.css",
         "src/vendor/font-awesome/css/font-awesome.min.css",
+        "src/vendor/swiper/swiper.css",   
+        "src/vendor/masonry/default.css",
+        "src/vendor/masonry/component.css",
         // "src/vendor/jqueryui/jquery-ui.min.css",
         //"src/vendor/sweetalert/sweetalert.css"
     ],
@@ -61,7 +71,17 @@ mix.webpackConfig({
             template: "ejs-compiled-loader!./src/index.ejs",
             filename: "index.html",
             inject: false
-        })
+        }),
+        // new HtmlWebpackPlugin({
+        //     template: "ejs-compiled-loader!./src/about.ejs",
+        //     filename: "about.html",
+        //     inject: false
+        // }),
+        // new HtmlWebpackPlugin({
+        //     template: "ejs-compiled-loader!./src/portfolio.ejs",
+        //     filename: "portfolio.html",
+        //     inject: false
+        // })
     ],
     devServer: {
         //hot: true, inline: true, contentBase: __dirname

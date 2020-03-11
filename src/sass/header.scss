@@ -1,10 +1,14 @@
 .ib-header {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 2;
     right: 0;
-    padding: 50px;
+    padding: 25px 50px;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    background-color: rgba(0,0,0,0);
+    @include ib-transition;
     @include media-breakpoint-down-xl {
         padding: 25px;
     }
@@ -20,6 +24,7 @@
         position: relative;
         justify-content: center;
         margin-left: 35px;
+        cursor: none;
         @include media-breakpoint-down(lg) {
             margin-left: 20px;
         }
@@ -85,8 +90,10 @@
     .navbar-brand {
         margin: 0;
         padding: 0;
+        position: relative;
+        z-index: 1;
         animation: ib-logo 2s linear infinite;
-        -webkit-animation: ib-logo 2s linear infinite;
+        -webkit-animation: ib-logo 2s linear infinite;       
         @keyframes ib-logo {
             100% {
                 transform: rotatey(360deg);
@@ -160,6 +167,9 @@
     }
 }
 .ib-menu-open {
+    .ib-header{
+        bottom: 0;
+    }
     .ib-menu {
         position: fixed;
         top: 0;
@@ -261,7 +271,7 @@
                         // animation-delay: 1.5s;
                     }
                 }
-                h5 {
+                a {
                     overflow: hidden;
                     font-size: 60px;
                     font-weight: bold;
@@ -300,6 +310,22 @@
                                 transform: translateY(0px);
                                 opacity: 1;
                             }
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        span{
+                            -webkit-animation-delay: 1.5s;
+                            animation-delay: 1.5s;
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    a{
+                        span{
+                            -webkit-animation-delay: 1.7s;
+                            animation-delay: 1.7s;
                         }
                     }
                 }
@@ -345,7 +371,7 @@
                     width: 100%;
                     animation: ib-width-close 0.8s linear forwards;
                     -webkit-animation: ib-width-close 0.8s linear forwards;
-                    animation-delay: 0.3s;
+                    animation-delay: 0.8s;
                     @keyframes ib-width-close {
                         0% {
                             width: 100%;
@@ -363,7 +389,7 @@
                         }
                     }
                 }
-                h5 {
+                a {
                     span {
                         animation: ib-menu-text-down 0.6s linear forwards;
                         -webkit-animation: ib-menu-text-down 0.6s linear forwards;
@@ -388,6 +414,30 @@
                                 transform: translateY(100px);
                                 opacity: 0;
                             }
+                        }
+                    }
+                }
+                &:nth-child(1){
+                    a{
+                        span{
+                            -webkit-animation-delay: 0.4s;
+                            animation-delay: 0.4s;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        span{
+                            -webkit-animation-delay: 0.2s;
+                            animation-delay: 0.2s;
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    a{
+                        span{
+                            -webkit-animation-delay: 0s;
+                            animation-delay:0s;
                         }
                     }
                 }

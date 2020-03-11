@@ -8,6 +8,11 @@
 @import "header";
 @import "index";
 @import "footer";
+@import "about";
+@import "portfolio";
+* {
+	cursor: none;
+}
 body {
     font-family: $f-prompt;
     text-rendering: optimizeLegibility !important;
@@ -17,7 +22,19 @@ body {
     font-size: 14px;
     color: $white;
     cursor: none;
-    overflow: hidden;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+    }
 }
 
 h1,
@@ -56,8 +73,27 @@ button {
         box-shadow: none;
     }
 }
-* {
-	cursor: none;
+.container{
+    max-width: 1440px;
+    @include media-breakpoint-down-xxl{
+        max-width: 1280px;
+    }
+    @include media-breakpoint-down-xl{
+        max-width: 1140px;
+    }
+    @include media-breakpoint-down(lg){
+        max-width: 960px;
+    }
+    @include media-breakpoint-down(md){
+      
+        max-width: 720px;
+    }
+    @include media-breakpoint-down(sm){       
+        max-width: 540px;
+    }
+    @include media-breakpoint-down(xs){
+        max-width: 100%;
+    }
 }
 .ib-main-section{
     overflow: hidden;
@@ -125,7 +161,289 @@ figure#mouse-pointer {
     background-repeat: no-repeat;
     background-color:rgba(239,83,80,0.7);
     border-radius: 50px;
+    z-index: 3;
     @include media-breakpoint-down(md) {
         display: none;
       }
 }
+.ib-ring-shape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .ib-ring-left {
+        position: absolute;
+        left: 30px;
+        top: 250px;
+        @include media-breakpoint-down(sm) {
+            left: 20px;
+            top: 110px;
+        }
+        &:before,
+        &:after {
+            @include ib-before-after;
+            border: 5px solid $primary-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            -webkit-animation: circle-left 10s infinite linear;
+            animation: circle-left 10s infinite linear;
+            @include media-breakpoint-down-xl {
+                width: 40px;
+                height: 40px;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 30px;
+                height: 30px;
+                border-width: 2px;
+            }
+            @keyframes circle-left {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(360deg)
+                }
+            }
+            @-webkit-keyframes circle-left {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(360deg)
+                }
+            }
+        }
+        &:before {
+            left: 20px;
+            top: -20px;
+            @include media-breakpoint-down-xl {
+                left: 15px;
+                top: -15px;
+            }
+            -webkit-animation: circle-right 10s infinite linear;
+            animation: circle-right 10s infinite linear;
+            @keyframes circle-right {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(-360deg)
+                }
+            }
+            @-webkit-keyframes circle-right {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(-360deg)
+                }
+            }
+        }
+    }
+    .ib-ring-right {
+        position: absolute;
+        right: 100px;
+        bottom: 300px;
+        @include media-breakpoint-down(md) {
+            right: 80px;
+            bottom: 210px;
+        }
+        @include media-breakpoint-down(sm) {
+            right: 60px;
+            bottom: 110px;
+        }
+        &:before,
+        &:after {
+            @include ib-before-after;
+            border: 5px solid $primary-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            -webkit-animation: circle-left 10s infinite linear;
+            animation: circle-left 10s infinite linear;
+            @include media-breakpoint-down-xl {
+                width: 40px;
+                height: 40px;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 30px;
+                height: 30px;
+                border-width: 2px;
+            }
+            @keyframes circle-left {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(360deg)
+                }
+            }
+            @-webkit-keyframes circle-left {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(360deg)
+                }
+            }
+        }
+        &:before {
+            left: 20px;
+            top: -16px;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: circle-right 10s infinite linear;
+            animation: circle-right 10s infinite linear;
+            @include media-breakpoint-down-xl {
+                left: 15px;
+                top: -15px;
+                width: 30px;
+                height: 30px;
+            }
+            @keyframes circle-right {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(-360deg)
+                }
+            }
+            @-webkit-keyframes circle-right {
+                from {
+                    -webkit-transform: rotateZ(0deg)
+                }
+                to {
+                    -webkit-transform: rotateZ(-360deg)
+                }
+            }
+        }
+    }
+}
+.ib-dot-shape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    &:before,
+    &:after {
+        @include ib-before-after;
+        background: url(../images/dot-shape.svg) no-repeat;
+        background-size: contain;
+        background-position: center center;
+        opacity: 0.19;
+    }
+    &:before {
+        top: auto;
+        right: auto;
+        width: 95px;
+        height: 160px;
+        left: 35px;
+        bottom: 200px;
+        @include media-breakpoint-down-xxxl {
+            width: 75px;
+        }
+        @include media-breakpoint-down(lg) {
+            bottom: 150px;
+        }
+        @include media-breakpoint-down(md) {
+            bottom: 120px;
+            width: 60px;
+        }
+        @include media-breakpoint-down(xs) {
+            height: 120px;
+            left: 25px;
+            bottom: 40px;
+            width: 50px;
+        }
+    }
+    &:after {
+        bottom: auto;
+        left: auto;
+        width: 145px;
+        height: 195px;
+        top: 70px;
+        right: 80px;
+        transform: rotate(90deg);
+        @include media-breakpoint-down-xxxl {
+            width: 85px;
+        }
+        @include media-breakpoint-down(lg) {
+            height: 145px;
+            width: 75px;
+        }
+        @include media-breakpoint-down(md) {
+            height: 105px;
+            width: 90px;
+            right: 40px;
+            top: 20px;
+        }
+        @include media-breakpoint-down(xs) {
+            height: 85px;
+            width: 70px;
+            right: 30px;
+            top: 10px;
+        }
+    }
+}
+.ib-line-shape {
+    position: fixed;
+    top: 0;
+    left: 140px;
+    bottom: 0;
+    right: 140px;
+    opacity: 0.05;
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(md) {
+        left: 70px;
+        right: 70px;
+    }
+    @include media-breakpoint-down(sm) {
+        left: 40px;
+        right: 40px;
+    }
+    span {
+        width: 2px;
+        display: block;
+        background-color: $white;
+        
+        height: 100%;
+     
+        &:last-child() {
+            @include media-breakpoint-down-xxl {
+                display: none;
+            }
+        }
+        &:nth-last-child(2) {
+            @include media-breakpoint-down-xl {
+                display: none;
+            }
+        }
+        &:nth-last-child(3) {
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+        &:nth-last-child(4) {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        &:nth-last-child(5) {
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+        }
+    }
+}
+.ib-inner-page{
+    // padding-top: 150px;
+    // overflow-y: auto;
+    .ib-footer{
+        // position: relative;
+    }
+}
+

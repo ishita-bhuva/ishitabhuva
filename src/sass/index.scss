@@ -24,300 +24,8 @@
             right: 150px;
         }
     }
-    .ib-ring-shape {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        .ib-ring-left {
-            position: absolute;
-            left: 30px;
-            top: 250px;
-            @include media-breakpoint-down(sm) {
-                left: 20px;
-                top: 110px;
-            }
-            &:before,
-            &:after {
-                @include ib-before-after;
-                border: 5px solid $primary-color;
-                width: 50px;
-                height: 50px;
-                border-radius: 10px;
-                -webkit-animation: circle-left 10s infinite linear;
-                animation: circle-left 10s infinite linear;
-                @include media-breakpoint-down-xl {
-                    width: 40px;
-                    height: 40px;
-                }
-                @include media-breakpoint-down(sm) {
-                    width: 30px;
-                    height: 30px;
-                    border-width: 2px;
-                }
-                @keyframes circle-left {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(360deg)
-                    }
-                }
-                @-webkit-keyframes circle-left {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(360deg)
-                    }
-                }
-            }
-            &:before {
-                left: 20px;
-                top: -20px;
-                @include media-breakpoint-down-xl {
-                    left: 15px;
-                    top: -15px;
-                }
-                -webkit-animation: circle-right 10s infinite linear;
-                animation: circle-right 10s infinite linear;
-                @keyframes circle-right {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(-360deg)
-                    }
-                }
-                @-webkit-keyframes circle-right {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(-360deg)
-                    }
-                }
-            }
-        }
-        .ib-ring-right {
-            position: absolute;
-            right: 100px;
-            bottom: 300px;
-            @include media-breakpoint-down(md) {
-                right: 80px;
-                bottom: 210px;
-            }
-            @include media-breakpoint-down(sm) {
-                right: 60px;
-                bottom: 110px;
-            }
-            &:before,
-            &:after {
-                @include ib-before-after;
-                border: 5px solid $primary-color;
-                width: 50px;
-                height: 50px;
-                border-radius: 10px;
-                -webkit-animation: circle-left 10s infinite linear;
-                animation: circle-left 10s infinite linear;
-                @include media-breakpoint-down-xl {
-                    width: 40px;
-                    height: 40px;
-                }
-                @include media-breakpoint-down(sm) {
-                    width: 30px;
-                    height: 30px;
-                    border-width: 2px;
-                }
-                @keyframes circle-left {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(360deg)
-                    }
-                }
-                @-webkit-keyframes circle-left {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(360deg)
-                    }
-                }
-            }
-            &:before {
-                left: 20px;
-                top: -16px;
-                width: 40px;
-                height: 40px;
-                -webkit-animation: circle-right 10s infinite linear;
-                animation: circle-right 10s infinite linear;
-                @include media-breakpoint-down-xl {
-                    left: 15px;
-                    top: -15px;
-                    width: 30px;
-                    height: 30px;
-                }
-                @keyframes circle-right {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(-360deg)
-                    }
-                }
-                @-webkit-keyframes circle-right {
-                    from {
-                        -webkit-transform: rotateZ(0deg)
-                    }
-                    to {
-                        -webkit-transform: rotateZ(-360deg)
-                    }
-                }
-            }
-        }
-    }
-    .ib-dot-shape {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        &:before,
-        &:after {
-            @include ib-before-after;
-            background: url(../images/dot-shape.svg) no-repeat;
-            background-size: contain;
-            background-position: center center;
-            opacity: 0.19;
-        }
-        &:before {
-            top: auto;
-            right: auto;
-            width: 95px;
-            height: 160px;
-            left: 35px;
-            bottom: 200px;
-            @include media-breakpoint-down-xxxl {
-                width: 75px;
-            }
-            @include media-breakpoint-down(lg) {
-                bottom: 150px;
-            }
-            @include media-breakpoint-down(md) {
-                bottom: 120px;
-                width: 60px;
-            }
-            @include media-breakpoint-down(xs) {
-                height: 120px;
-                left: 25px;
-                bottom: 40px;
-                width: 50px;
-            }
-        }
-        &:after {
-            bottom: auto;
-            left: auto;
-            width: 145px;
-            height: 195px;
-            top: 20px;
-            right: 80px;
-            transform: rotate(90deg);
-            @include media-breakpoint-down-xxxl {
-                width: 85px;
-                top: 0;
-            }
-            @include media-breakpoint-down(lg) {
-                height: 145px;
-                width: 75px;
-            }
-            @include media-breakpoint-down(md) {
-                height: 105px;
-                width: 90px;
-                right: 40px;
-                top: 20px;
-            }
-            @include media-breakpoint-down(xs) {
-                height: 85px;
-                width: 70px;
-                right: 30px;
-                top: 10px;
-            }
-        }
-    }
-    .ib-line-shape {
-        position: absolute;
-        top: 0;
-        left: 140px;
-        bottom: 0;
-        right: 140px;
-        opacity: 0.05;
-        display: flex;
-        justify-content: space-between;
-        @include media-breakpoint-down(md) {
-            left: 70px;
-            right: 70px;
-        }
-        @include media-breakpoint-down(sm) {
-            left: 40px;
-            right: 40px;
-        }
-        span {
-            width: 2px;
-            display: block;
-            background-color: $white;
-            // -webkit-animation: dash 5s ease-in-out forwards;
-            // animation: dash 5s ease-in-out forwards;
-            // animation-delay: 2s;
-            height: 100%;
-            // @-webkit-keyframes dash {
-            //     0% {
-            //         height: 0;
-            //     }
-            //     100% {
-            //         height: 100%;
-            //     }
-            // }
-            // @keyframes dash {
-            //     0% {
-            //         height: 0;
-            //     }
-            //     100% {
-            //         height: 100%;
-            //     }
-            // }
-            // &:nth-child(2n) {
-            //     animation-delay: 5s;
-            // }
-            &:last-child() {
-                @include media-breakpoint-down-xxl {
-                    display: none;
-                }
-            }
-            &:nth-last-child(2) {
-                @include media-breakpoint-down-xl {
-                    display: none;
-                }
-            }
-            &:nth-last-child(3) {
-                @include media-breakpoint-down(lg) {
-                    display: none;
-                }
-            }
-            &:nth-last-child(4) {
-                @include media-breakpoint-down(md) {
-                    display: none;
-                }
-            }
-            &:nth-last-child(5) {
-                @include media-breakpoint-down(xs) {
-                    display: none;
-                }
-            }
-        }
-    }
+   
+    
     .container {
         height: 100%;
         display: flex;
@@ -486,75 +194,50 @@
 }
 
 
-.ib-loader {
-    position: relative;
+.ib-loader{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    z-index: 999;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;  
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;
     background-color: $black;
-    &:before {
-        background-color: $black;
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 3;
-    }
-    &:after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url(../images/logo.svg) no-repeat;
-        background-position: center center;
-        background-size: 150px;
+    transition: height 2s ease;
+    i{
         width: 100%;
         height: 100%;
-        z-index: 11;
-        animation: ib-logo 5s linear infinite;
-        -webkit-animation: ib-logo 5s linear infinite;
-        @keyframes ib-logo {
-            100% {
-                transform: rotatey(360deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate3d(0,0,0);
+        animation: ib-loader-logo 1s forwards ease-in-out;
+        -webkit-animation: ib-loader-logo 1s forwards ease-in-out;
+        animation-delay: 0.2s;
+       @keyframes ib-loader-logo {
+           0%{
+               transform: translate3d(0,0,0);
+           }
+           100%{
+               transform: translate3d(0,-100px,0);
+           }   
+                   
+       }
+       @-webkit-keyframes ib-loader-logo {
+            0%{
+                transform: translate3d(0,0,0);
             }
+            100%{
+                transform: translate3d(0,-100px,0);
+            }   
         }
-        @-webkit-keyframes ib-logo {
-            100% {
-                transform: rotatey(360deg);
-            }
-        }
-    }
-    span{
-        background: url(../images/logo.svg) no-repeat;
-        background-size: contain;
-        background-position: center center;
-        width: 700px;
-        height: 100vh;
-        position: absolute;
-        right: 10%;
-        top: -100px;
-        display: block;
-        z-index: 11;
-        opacity: 0.05;
-        margin: 0 auto;
-        @include media-breakpoint-down(lg){
-            width: 540px;
-        }
-        @include media-breakpoint-down(sm){
-            width: 500px;
-            top: -10px;
-            height: 500px;
-        }
-        @include media-breakpoint-down(sm){
-            width: 500px;
-            top: -10px;
-            height: 500px;
-        }
-        @include media-breakpoint-down(xs){
-            width: 310px;
-            top: 0px;
-            height: 310px;
+        img{
+            width: 150px;           
         }
     }
 }

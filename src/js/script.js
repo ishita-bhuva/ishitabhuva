@@ -1,5 +1,3 @@
-
-
 // $(document).ready(function() {
 //     $('.navbar-toggler').on('click', function(e) {
 //         if ($(this).hasClass('ib-close')) {
@@ -9,7 +7,7 @@
 //                 $('body').removeClass('ib-menu-open');
 //                 $('body').removeClass('ib-menu-close');
 //                 $(this).removeClass('ib-close');
-//             }, 1400);
+//             }, 1700);
 //         } else {
 //             $('body').addClass('ib-menu-open');
 //             setTimeout(() => {
@@ -20,7 +18,8 @@
 // });
 
 function hideLoader() {
-    $('.ib-loader').fadeOut(600);
+    $('.ib-loader').css({"height":"0px"});
+    // $(".ib-loader").css({"height":"0px"});
 }
 
 function init() {
